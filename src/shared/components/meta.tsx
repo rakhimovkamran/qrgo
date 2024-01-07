@@ -10,7 +10,7 @@ type MetaProps = {
 export const Meta = ({
   title,
   description,
-  imageUrl = "/images/cover.jpg",
+  imageUrl = "/cover.jpg",
   url = typeof window !== "undefined" ? window.location.href : "",
 }: MetaProps) => {
   return (
