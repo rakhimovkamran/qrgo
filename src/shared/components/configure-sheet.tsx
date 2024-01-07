@@ -22,9 +22,7 @@ import { bufferToBase64 } from "~/shared/utils";
 import { QrCard } from "~/shared/components/qr-card";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerTrigger,
 } from "~/shared/ui/drawer";
@@ -65,16 +63,6 @@ export const ConfigureSheet = ({
           <div className={"overflow-scroll px-4"}>
             <ConfigureForm state={state} setState={setState} />
           </div>
-
-          <DrawerFooter>
-            <Button>Done</Button>
-
-            <DrawerClose>
-              <Button className={"w-full"} variant="outline">
-                Cancel
-              </Button>
-            </DrawerClose>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     );

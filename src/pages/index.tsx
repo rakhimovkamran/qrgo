@@ -56,7 +56,9 @@ export default function Home() {
         <header
           className={"z-30 mb-5 flex flex-col items-center justify-center"}
         >
-          <h1 className={"relative mb-4 text-7xl font-semibold"}>Qrgo</h1>
+          <h1 className={"relative mb-4 text-5xl font-semibold md:text-7xl"}>
+            Qrgo
+          </h1>
 
           <p className={"text-xl font-light text-gray-600"}>
             Get your minimalistic QR.
