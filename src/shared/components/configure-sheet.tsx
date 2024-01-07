@@ -18,6 +18,7 @@ import { Slider } from "~/shared/ui/slider";
 import { ColorPicker } from "~/shared/components/color-picker";
 import { InitialQrCodeState } from "~/shared/constants";
 import { bufferToBase64 } from "~/shared/utils";
+import { QrCard } from "~/shared/components/qr-card";
 
 type ConfigureSheetProps = {
   state: QRCodeState;
@@ -45,6 +46,18 @@ export const ConfigureSheet = ({
           <SheetTitle>QR Code Configuration</SheetTitle>
           <SheetDescription>Customize your qr code here.</SheetDescription>
         </SheetHeader>
+
+        <div className={"mt-4 flex items-center justify-center sm:hidden"}>
+          <QrCard
+            data={state.data}
+            size={state.size}
+            bgColor={state.bgColor}
+            fgColor={state.fgColor}
+            cr={state.cr}
+            title={state.title}
+            logo={state.logo}
+          />
+        </div>
 
         <section className={"my-6 flex w-full flex-col gap-6"}>
           <div className={"flex w-full flex-col gap-2"}>
