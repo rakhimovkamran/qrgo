@@ -26,14 +26,17 @@ export const bufferToBase64 = (buffer: ArrayBuffer) => {
   return `data:image/png;base64,${btoa(binary)}`;
 };
 
-export const downloadSvgFromResponse = async (response: Response) => {
+export const downloadImageResponse = async (
+  response: Response,
+  format: "svg" | "png",
+) => {
   const blob = await response.blob();
   const url = window.URL.createObjectURL(blob);
 
   const a = document.createElement("a");
   a.style.display = "none";
   a.href = url;
-  a.download = `qrgo_${Date.now()}.svg`;
+  a.download = `qrgo_${Date.now()}.${format}`;
   document.body.appendChild(a);
 
   a.click();

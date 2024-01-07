@@ -3,6 +3,12 @@ import { Footer } from "~/shared/components/footer";
 
 const QueryParameters = [
   {
+    title: "as",
+    type: "svg | png",
+    description: `Response format. Default is "svg".`,
+  },
+
+  {
     title: "data",
     type: "string",
     description: "The data to be encoded in the QR code. Required.",
@@ -11,7 +17,8 @@ const QueryParameters = [
   {
     title: "s",
     type: "number",
-    description: "The size of the QR code in pixels. Default is 200.",
+    description:
+      "The size of the QR code in pixels (Min: 100, Max: 1000). Default is 200.",
   },
 
   {
@@ -32,7 +39,7 @@ const QueryParameters = [
     title: "cr",
     type: "number",
     description:
-      "The corner radius of the QR code. Clamped between 0 and 15. Default is 10.",
+      "The corner radius of the QR code (Min: 0, Max: 15). Default is 10.",
   },
 
   {
@@ -83,12 +90,12 @@ export default function ApiGuide() {
         description={"Get your minimalistic QR."}
       />
 
-      <main className={"mx-auto max-w-xl px-4 pb-10 pt-36"}>
-        <div
-          className={"squared-pattern absolute top-0 -z-20 h-[400px] w-full"}
-        />
+      <div
+        className={"squared-pattern absolute left-0 top-0 z-0 h-[400px] w-full"}
+      />
 
-        <header className={"flex flex-col gap-4"}>
+      <main className={"relative z-30 mx-auto max-w-xl px-4 pb-10 pt-20"}>
+        <header className={"z-20 flex flex-col gap-4"}>
           <h1 className={"text-3xl font-bold"}>Qrgo API</h1>
           <p className={"text-sm font-light text-muted-foreground"}>
             This API generates QR codes with customizable parameters. It returns

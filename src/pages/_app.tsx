@@ -6,7 +6,13 @@ import { cn } from "~/shared/utils";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <main className={cn(GeistSans.className, "antialiased")}>
+    <main
+      vaul-drawer-wrapper=""
+      className={cn(
+        GeistSans.className,
+        "min-h-[100vh] bg-background antialiased",
+      )}
+    >
       <Component {...pageProps} />
     </main>
   );
