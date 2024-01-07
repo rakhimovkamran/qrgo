@@ -9,7 +9,7 @@ export const Footer = ({ links }: FooterProps) => {
   return (
     <footer
       className={
-        "mt-16 flex w-full items-center justify-between border-t border-t-zinc-100 py-6 text-[#171717]"
+        "sticky bottom-0 mt-4 flex w-full items-center justify-between border-t border-t-zinc-100 bg-white py-6 text-[#171717]"
       }
     >
       <div className={"flex items-center gap-2"}>
