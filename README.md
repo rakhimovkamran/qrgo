@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Qrgo is a QR code generation API that creates customizable QR codes. It returns an SVG image based on the provided query parameters, offering a simple and efficient way to generate QR codes for various needs.
+Qrgo is a QR code generation API that creates customizable QR codes. It returns an image based on the provided query parameters, offering a simple and efficient way to generate QR codes for various needs.
 
 ## Endpoint
 
@@ -40,11 +40,6 @@ This request generates a QR code with the specified parameters:
 - `cr`: Corner radius is 5
 
 ![Example QR Code](https://qrgo.rakhi.mov/api/qr?data=https://example.com&s=100&bg=%23000&fg=%23fff&title=Example&logo=https://placehold.co/120x120/FFF/000/png&cr=5)
-
-## Response
-
-- Content-Type: `image/svg+xml`
-- A downloadable SVG file if `download` is set to `"true"`.
 
 ## Notes
 

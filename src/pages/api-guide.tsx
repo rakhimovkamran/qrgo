@@ -99,7 +99,7 @@ export default function ApiGuide() {
           <h1 className={"text-3xl font-bold"}>Qrgo API</h1>
           <p className={"text-sm font-light text-muted-foreground"}>
             This API generates QR codes with customizable parameters. It returns
-            an SVG image of the QR code based on the provided query parameters.
+            an image of the QR code based on the provided query parameters.
           </p>
         </header>
 
@@ -125,20 +125,6 @@ export default function ApiGuide() {
               {QueryParameters.map((param) => (
                 <QueryParameter key={param.title} {...param} />
               ))}
-            </ul>
-          </div>
-        </section>
-
-        <section className={"mt-8 flex flex-col"}>
-          <h2 className={"text-xl font-semibold"}>Response</h2>
-
-          <div className={"mt-2 flex flex-col gap-2 text-sm"}>
-            <ul className="ml-6 list-disc [&>li]:mt-2">
-              <li>Content-Type: `image/svg+xml`</li>
-              <li>
-                A downloadable SVG file if `download` is set to
-                `&quot;true&quot;`.
-              </li>
             </ul>
           </div>
         </section>
