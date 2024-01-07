@@ -99,7 +99,7 @@ export default function Home() {
 
         <Footer
           links={[
-            { label: "GitHub", href: "http://github.com/rakhimovkamran" },
+            { label: "GitHub", href: "https://github.com/rakhimovkamran/qrgo" },
             { label: "API Guide", href: "/api-guide" },
           ]}
         />

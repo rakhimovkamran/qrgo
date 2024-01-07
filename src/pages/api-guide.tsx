@@ -209,7 +209,7 @@ export default function ApiGuide() {
 
         <Footer
           links={[
-            { label: "GitHub", href: "http://github.com/rakhimovkamran" },
+            { label: "GitHub", href: "https://github.com/rakhimovkamran/qrgo" },
             { label: "Home", href: "/" },
           ]}
         />
