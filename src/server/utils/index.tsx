@@ -20,21 +20,35 @@ export const fetchImageAsBase64 = async (
   }
 };
 
+export const resolveQueryParam = (param: string | null, fallback = "") => {
+  return param ?? fallback;
+};
+
 export const resolveQueryParams = (req: NextRequest) => {
   const url = new URL(req.url);
 
-  const as = url.searchParams.get("as") ?? "svg";
-  const data = url.searchParams.get("data") ?? "";
-  const size = clamp(Number(url.searchParams.get("s") ?? "200"), 100, 1000);
+  const as = resolveQueryParam(url.searchParams.get("as"), "svg");
+  const data = resolveQueryParam(url.searchParams.get("data"));
 
-  const bgColor = url.searchParams.get("bg") ?? "#000000";
-  const fgColor = url.searchParams.get("fg") ?? "#FFFFFF";
-  const cr = clamp(Number(url.searchParams.get("cr") ?? "10"), 0, 15);
+  const size = clamp(
+    Number(resolveQueryParam(url.searchParams.get("s"), "200")),
+    100,
+    1000,
+  );
 
-  const title = url.searchParams.get("title") ?? "";
-  const logo = url.searchParams.get("logo") ?? "";
+  const bgColor = resolveQueryParam(url.searchParams.get("bg"), "#000");
+  const fgColor = resolveQueryParam(url.searchParams.get("fg"), "#FFF");
 
-  const download = url.searchParams.get("download") ?? "";
+  const cr = clamp(
+    Number(resolveQueryParam(url.searchParams.get("cr"), "10")),
+    0,
+    15,
+  );
+
+  const title = resolveQueryParam(url.searchParams.get("title"));
+  const logo = resolveQueryParam(url.searchParams.get("logo"));
+
+  const download = resolveQueryParam(url.searchParams.get("download"));
 
   return {
     as,
