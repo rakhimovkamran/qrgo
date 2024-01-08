@@ -28,7 +28,10 @@ export const resolveQueryParams = (req: NextRequest) => {
   const url = new URL(req.url);
 
   const as = resolveQueryParam(url.searchParams.get("as"), "svg");
-  const data = resolveQueryParam(url.searchParams.get("data"));
+
+  const data = resolveQueryParam(
+    decodeURIComponent(url.searchParams.get("data") ?? ""),
+  );
 
   const size = clamp(
     Number(resolveQueryParam(url.searchParams.get("s"), "200")),

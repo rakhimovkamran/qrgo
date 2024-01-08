@@ -16,7 +16,7 @@ export default function Home() {
 
   const handleDownload = async (format: "svg" | "png", size: number) => {
     const params = new URLSearchParams({
-      data: state.data,
+      data: encodeURIComponent(state.data),
       bg: state.bgColor,
       fg: state.fgColor,
       title: state.title,
